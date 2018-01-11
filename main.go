@@ -70,7 +70,7 @@ func main() {
 		output = string(result)
 	} else if *format == "xml" {
 		result, _ := xml.Marshal(Items{Item: items})
-		output = string(result)
+		output = XML_HEADER + string(result)
 	}
 	fmt.Println(output)
 }
