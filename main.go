@@ -3,6 +3,7 @@ package main;
 import (
 	"flag"
 	"fmt"
+	"strings"
 	"net/http"
 	"io/ioutil"
 	"encoding/json"
@@ -44,7 +45,7 @@ func main() {
 	var format *string = flag.String("f", "xml", "Output type")
 	flag.Parse()
 
-	uri := WOOORDHUNT_SITE + "/get_tips.php?abc=" + *query
+	uri := WOOORDHUNT_SITE + "/get_tips.php?abc=" + strings.ToLower(*query)
 
 	resp, _ := http.Get(uri)
 	defer resp.Body.Close()
@@ -56,10 +57,11 @@ func main() {
 
 	var items []Item
 	for _, v := range jsonResponse.Tips {
+		query := strings.ToLower(v.Word)
 		items = append(items, Item{
-			Title: v.Word,
+			Title: query,
 			SubTitle: v.Translate,
-			Arg: WOOORDHUNT_SITE + "/word/" + v.Word,
+			Arg: WOOORDHUNT_SITE + "/word/" + query,
 			Icon: ItemIcon{Path: "icon.png"},
 		})
 	}
