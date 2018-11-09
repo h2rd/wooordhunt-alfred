@@ -1,6 +1,6 @@
 # Simple workflow for https://wooordhunt.ru/ and alfred 2
 
 ```
-env GOOS=linux GOARCH=arm go build main.go
+env GOOS=darwin GOARCH=386 go build main.go
 upx --brute main
 ```
