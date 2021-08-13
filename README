@@ -1,6 +1,11 @@
 # Simple workflow for https://wooordhunt.ru/ and alfred 2
 
 ```
-env GOOS=darwin GOARCH=386 go build main.go
+Intel
+# GOOS=darwin GOARCH=386 go build main.go
+
+Apple silicone
+# GOOS=darwin GOARCH=arm64 go build main.go
+
 upx --brute main
 ```
