@@ -50,7 +50,7 @@
 				<key>runningsubtext</key>
 				<string>Loading</string>
 				<key>script</key>
-				<string>./main -f xml -q "{query}"</string>
+				<string>./bin/wooordhunt-alfred -f xml -q "{query}"</string>
 				<key>title</key>
 				<string>Wordhunt</string>
 				<key>type</key>
